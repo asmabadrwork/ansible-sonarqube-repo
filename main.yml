@@ -1,0 +1,10 @@
+---
+- name: Install and Configure SonarQube using Ansible Role
+  hosts: all
+  become: yes
+
+  vars_files:
+    - ./sonarqube_Ansible_5/vars/main.yml
+
+  roles:
+    - role: sonarqube_Ansible_5
