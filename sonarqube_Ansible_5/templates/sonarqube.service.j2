@@ -1,0 +1,20 @@
+[Unit]
+Description=SonarQube service
+After=network.target
+
+[Service]
+Type=forking
+ExecStart={{ sonarqube_install_dir }}/sonarqube-{{ sonarqube_version }}/bin/linux-x86-64/sonar.sh start
+ExecStop={{ sonarqube_install_dir }}/sonarqube-{{ sonarqube_version }}/bin/linux-x86-64/sonar.sh stop
+User={{ sonarqube_user }}
+Group={{ sonarqube_group }}
+Restart=always
+LimitNOFILE=65536
+LimitNPROC=4096
+PIDFile={{ sonarqube_install_dir }}/sonarqube-{{ sonarqube_version }}/bin/linux-x86-64/SonarQube.pid
+TimeoutStartSec=300
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target
+

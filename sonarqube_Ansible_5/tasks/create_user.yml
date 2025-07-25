@@ -1,0 +1,20 @@
+- name: Create Sonar group
+  group:
+    name: "{{ sonarqube_group }}"
+    state: present
+
+- name: Create Sonar user
+  user:
+    name: "{{ sonarqube_user }}"
+    group: "{{ sonarqube_group }}"
+    shell: /bin/bash
+    system: yes
+    create_home: no
+
+- name: Create install directory
+  file:
+    path: "{{ sonarqube_install_dir }}"
+    state: directory
+    owner: "{{ sonarqube_user }}"
+    group: "{{ sonarqube_group }}"
+

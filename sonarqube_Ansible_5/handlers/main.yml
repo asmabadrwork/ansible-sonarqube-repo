@@ -1,0 +1,6 @@
+- name: Restart SonarQube
+  systemd:
+    name: sonarqube
+    state: restarted
+    enabled: yes
+

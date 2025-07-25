@@ -1,0 +1,8 @@
+- name: Download SonarQube using curl
+  become: true
+  ansible.builtin.command: >
+    curl -L -o /tmp/sonarqube-{{ sonarqube_version }}.zip
+    https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-{{ sonarqube_version }}.zip
+  args:
+    creates: "/tmp/sonarqube-{{ sonarqube_version }}.zip"
+

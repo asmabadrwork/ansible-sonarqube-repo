@@ -1,0 +1,6 @@
+sonarqube_version: "9.9.4.87374"
+sonarqube_user: sonar
+sonarqube_group: sonar
+sonarqube_install_dir: /opt/sonarqube
+sonarqube_port: 9000
+

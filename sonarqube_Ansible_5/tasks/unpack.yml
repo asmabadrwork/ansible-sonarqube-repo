@@ -1,0 +1,8 @@
+- name: Extract SonarQube
+  unarchive:
+    src: "/tmp/sonarqube-{{ sonarqube_version }}.zip"
+    dest: "{{ sonarqube_install_dir }}"
+    remote_src: yes
+    owner: "{{ sonarqube_user }}"
+    group: "{{ sonarqube_group }}"
+

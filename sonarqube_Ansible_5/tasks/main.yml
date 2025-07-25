@@ -1,0 +1,7 @@
+- import_tasks: install_java.yml
+- import_tasks: create_user.yml
+- import_tasks: download.yml
+- import_tasks: unpack.yml
+- import_tasks: configure_service.yml
+- import_tasks: reload_systemd.yml
+

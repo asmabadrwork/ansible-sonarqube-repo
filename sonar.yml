@@ -1,0 +1,6 @@
+- name: Install SonarQube on Ubuntu or CentOS
+  hosts: all
+  become: true
+  roles:
+    - sonarqube_Ansible_5
+
